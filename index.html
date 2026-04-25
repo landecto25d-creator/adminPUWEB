@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - PU WEB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <p class="subtitle">Analytics Overview</p>
+            
+            <div class="controls-wrapper">
+                <div class="source-toggle">
+                    <span class="toggle-label active" id="label-pu">PU WEB</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dataSourceToggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="toggle-label" id="label-ir">PU WEB IR</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="summary-cards">
+                <div class="card">
+                    <h3>Total Visitors</h3>
+                    <p id="totalVisitors">Loading...</p>
+                </div>
+                <div class="card" id="irClicksCard">
+                    <h3>IR Web Clicks</h3>
+                    <p id="totalIrClicks">Loading...</p>
+                </div>
+            </div>
+
+            <div class="chart-controls">
+                <button class="btn active" data-view="bar">Bar Chart</button>
+                <button class="btn" data-view="line">Line Chart</button>
+                <button class="btn" data-view="sheets">Sheets View</button>
+                <button class="btn btn-export" id="exportBtn">Export to CSV</button>
+            </div>
+
+            <div class="data-display">
+                <!-- Chart Container -->
+                <div id="chartContainer" class="view-section active">
+                    <canvas id="resultsChart"></canvas>
+                </div>
+
+                <!-- Sheets/Table Container -->
+                <div id="sheetsContainer" class="view-section">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Count</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataTableBody">
+                            <!-- Data will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Firebase configuration and dashboard logic -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
