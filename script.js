@@ -214,7 +214,7 @@ function renderTable() {
     // Add total row
     const totalTr = document.createElement('tr');
     totalTr.innerHTML = `
-        <td style="font-weight: 800; text-transform: uppercase;">Total Results</td>
+        <td style="font-weight: 800; text-transform: uppercase;">Total Visitor</td>
         <td style="font-weight: 800;">${total}</td>
     `;
     dataTableBody.appendChild(totalTr);
